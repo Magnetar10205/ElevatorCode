@@ -21,8 +21,8 @@ public class ElevatorCode2 extends SubsystemBase {
     // Örneğin, X, Y, RB, LB gibi butonlar kullanılabilir
     private static final int PRESET_1_BUTTON = 3; // Örneğin: X butonu
     private static final int PRESET_2_BUTTON = 4; // Örneğin: Y butonu
-    private static final int PRESET_3_BUTTON = 5; // Örneğin: RB butonu
-    private static final int PRESET_4_BUTTON = 6; // Örneğin: LB butonu
+    private static final int PRESET_3_BUTTON = 1; // Örneğin: RB butonu
+    private static final int PRESET_4_BUTTON = 2; // Örneğin: LB butonu
 
     // Limit switch portları (digital input port numaraları)
     private static final int LIMIT_SWITCH_1_PORT = 0;
@@ -48,7 +48,7 @@ public class ElevatorCode2 extends SubsystemBase {
         limitSwitch4 = new DigitalInput(LIMIT_SWITCH_4_PORT);
     }
 
-    @Override
+   @Override
     public void periodic() {
         // Eğer zaten bir preset modu aktif değilse, preset butonlarına bak.
         if (targetPreset == 0) {
