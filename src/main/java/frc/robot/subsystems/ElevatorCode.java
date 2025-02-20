@@ -38,9 +38,9 @@ public class ElevatorCode extends SubsystemBase {
 
     private int targetPreset = 0;
 
-    public ElevatorCode() {
-        elevatorMotor = new WPI_TalonSRX(MOTOR_CAN_ID);
-        joystick = new Joystick(JOYSTICK_PORT);
+    public ElevatorCode(Joystick joystick,int MotorPort) {
+        elevatorMotor = new WPI_TalonSRX(MotorPort);
+        this.joystick = joystick;
 
         limitSwitch1 = new DigitalInput(LIMIT_SWITCH_1_PORT);
         limitSwitch2 = new DigitalInput(LIMIT_SWITCH_2_PORT);
